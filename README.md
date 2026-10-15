@@ -17,6 +17,13 @@ Cada notebook es independiente: descarga los datos, construye el modelo, lo entr
 
 En los notebooks de Kaggle se ven todas las salidas de la corrida real: curvas, métricas, intervalos de confianza y costo.
 
+## Los modelos entrenados (Hugging Face)
+
+Los pesos de la mejor época de los cuatro modelos están en Hugging Face: [nessi10/chestxray14-cnn-vs-transformers](https://huggingface.co/nessi10/chestxray14-cnn-vs-transformers).
+- **Formato:** cada modelo viene en `safetensors` con su `config.json`.
+- **Carga:** `modelos_chestxray14.py` carga cualquiera de los cuatro, incluida la DenseNet-121 hecha a mano, y da la probabilidad de las 14 enfermedades para una radiografía. Así se pueden probar sin volver a entrenar.
+- **Verificación:** comprobé que reproducen las probabilidades guardadas en Kaggle, con una diferencia menor a 0.002.
+
 ## Cómo ejecutarlos
 
 ### En Kaggle (recomendado, con GPU)
